@@ -1,0 +1,6 @@
+.DS_Store
+*.docx
+*.pdf
+WhatsApp Image*.jpeg
+assets/images/*.jpeg
+!assets/images/*-optimized.jpeg
