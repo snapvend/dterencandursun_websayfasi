@@ -258,7 +258,20 @@
             decoding="async"
           />
         </a>
-        <nav class="nav">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="primaryNav"
+          aria-expanded="false"
+        >
+          <span class="menu-toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span>Menü</span>
+        </button>
+        <nav class="nav" id="primaryNav" aria-label="Ana menü">
           <a href="#hakkimizda">Hakkımızda</a>
           <a href="#tedaviler">Tedaviler</a>
           <a href="#doktor">Muayenehanemiz</a>
@@ -1141,6 +1154,9 @@
     <script src="assets/js/analytics.js" data-measurement-id=""></script>
     <script>
       (() => {
+        const topbar = document.querySelector(".topbar");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const primaryNav = document.getElementById("primaryNav");
         const modal = document.getElementById("whatsappModal");
         const triggers = document.querySelectorAll("[data-whatsapp-trigger]");
         const form = document.getElementById("whatsappForm");
@@ -1160,6 +1176,20 @@
           document.body.classList.remove("modal-open");
         };
 
+        const closeMenu = () => {
+          topbar.classList.remove("menu-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        };
+
+        menuToggle.addEventListener("click", () => {
+          const isOpen = topbar.classList.toggle("menu-open");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        primaryNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+
         triggers.forEach((trigger) => {
           trigger.addEventListener("click", (event) => {
             event.preventDefault();
@@ -1174,6 +1204,9 @@
         document.addEventListener("keydown", (event) => {
           if (event.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
             closeModal();
+          }
+          if (event.key === "Escape" && topbar.classList.contains("menu-open")) {
+            closeMenu();
           }
         });
 
