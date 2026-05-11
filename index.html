@@ -415,21 +415,45 @@
           </div>
           <div class="clinic-gallery">
             <figure class="gallery-feature">
-              <img
-                src="assets/images/clinic-entrance-gallery-optimized.jpeg"
-                alt="Archident Diş Kliniği dış cephe ve giriş alanı"
-                loading="lazy"
-                decoding="async"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="
+                    assets/images/clinic-entrance-gallery-720.avif 720w,
+                    assets/images/clinic-entrance-gallery-1200.avif 1200w
+                  "
+                  sizes="(max-width: 760px) 100vw, 56vw"
+                />
+                <img
+                  src="assets/images/clinic-entrance-gallery-optimized.jpeg"
+                  alt="Archident Diş Kliniği dış cephe ve giriş alanı"
+                  width="1600"
+                  height="1200"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <figcaption>Kolay ulaşılabilir giriş ve karşılama alanı</figcaption>
             </figure>
             <figure>
-              <img
-                src="assets/images/clinic-xray-gallery-optimized.jpeg"
-                alt="Archident Diş Kliniği dijital görüntüleme alanı"
-                loading="lazy"
-                decoding="async"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="
+                    assets/images/clinic-xray-gallery-600.avif 600w,
+                    assets/images/clinic-xray-gallery-900.avif 900w
+                  "
+                  sizes="(max-width: 760px) 100vw, 28vw"
+                />
+                <img
+                  src="assets/images/clinic-xray-gallery-optimized.jpeg"
+                  alt="Archident Diş Kliniği dijital görüntüleme alanı"
+                  width="1200"
+                  height="1600"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <figcaption>Dijital görüntüleme ve planlama altyapısı</figcaption>
             </figure>
             <figure>
@@ -1252,7 +1276,6 @@
               href="https://www.instagram.com/dterencandursun?igsh=MWVkeXQxcDBrMnQ3aA=="
               target="_blank"
               rel="noopener"
-              aria-label="Instagram profilini aç"
             >
               <span class="social-icon instagram-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
@@ -1267,7 +1290,6 @@
               href="https://www.facebook.com/share/1Cxj4Je5cx/"
               target="_blank"
               rel="noopener"
-              aria-label="Facebook sayfasını aç"
             >
               <span class="social-icon facebook-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
@@ -1331,7 +1353,7 @@
         <strong>Randevu / Acil</strong>
       </span>
     </a>
-    <div class="whatsapp-modal" id="whatsappModal" aria-hidden="true">
+    <div class="whatsapp-modal" id="whatsappModal" aria-hidden="true" inert>
       <div class="whatsapp-modal-backdrop" data-whatsapp-close></div>
       <div
         class="whatsapp-modal-card"
@@ -1392,6 +1414,7 @@
         const phone = "905400341365";
 
         const openModal = () => {
+          modal.removeAttribute("inert");
           modal.setAttribute("aria-hidden", "false");
           document.body.classList.add("modal-open");
           setTimeout(() => nameInput.focus(), 50);
@@ -1399,6 +1422,7 @@
 
         const closeModal = () => {
           modal.setAttribute("aria-hidden", "true");
+          modal.setAttribute("inert", "");
           document.body.classList.remove("modal-open");
         };
 
