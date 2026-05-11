@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sayfa Bulunamadı | Archident Diş Kliniği</title>
+    <meta
+      name="description"
+      content="Aradığınız sayfa bulunamadı. Archident Diş Kliniği ana sayfasına veya İngilizce site sürümüne geri dönebilirsiniz."
+    />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="theme-color" content="#0d3b66" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/images/archident-logo.png" />
+    <style>
+      .error-shell {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 0;
+      }
+
+      .error-card {
+        width: min(760px, 100%);
+        padding: 40px;
+        background:
+          radial-gradient(circle at top right, rgba(199, 167, 108, 0.18), transparent 28%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 249, 252, 0.94));
+        border: 1px solid rgba(13, 59, 102, 0.1);
+        border-radius: 26px;
+        box-shadow: 0 22px 58px rgba(13, 59, 102, 0.12);
+      }
+
+      .error-brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .error-brand img {
+        width: 96px;
+      }
+
+      .error-kicker {
+        margin: 0 0 14px;
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--brand-soft);
+      }
+
+      .error-title {
+        margin: 0;
+        font-family: "Iowan Old Style", "Georgia", serif;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 1.05;
+      }
+
+      .error-copy {
+        margin: 18px 0 0;
+        font-size: 1.08rem;
+        line-height: 1.8;
+        color: var(--muted);
+      }
+
+      .error-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .error-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 54px;
+        padding: 0 22px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-weight: 800;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      }
+
+      .error-action:hover {
+        transform: translateY(-1px);
+      }
+
+      .error-action.primary {
+        color: #fff;
+        background: linear-gradient(135deg, var(--brand), var(--brand-soft));
+        box-shadow: 0 14px 30px rgba(13, 59, 102, 0.18);
+      }
+
+      .error-action.secondary {
+        color: var(--brand);
+        background: rgba(255, 255, 255, 0.74);
+        border-color: rgba(13, 59, 102, 0.14);
+      }
+
+      .error-meta {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .error-meta-card {
+        padding: 18px 20px;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(13, 59, 102, 0.1);
+        border-radius: 18px;
+      }
+
+      .error-meta-card strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.94rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--brand-soft);
+      }
+
+      .error-meta-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 720px) {
+        .error-card {
+          padding: 28px 20px;
+          border-radius: 22px;
+        }
+
+        .error-brand {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .error-meta {
+          grid-template-columns: 1fr;
+        }
+
+        .error-actions {
+          flex-direction: column;
+        }
+
+        .error-action {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page-shell error-shell">
+      <section class="error-card" aria-labelledby="error-title">
+        <div class="error-brand">
+          <img src="assets/images/archident-logo.png" alt="Archident logo" />
+          <div>
+            <p class="error-kicker">404 | Sayfa Bulunamadı</p>
+            <h1 class="error-title" id="error-title">Aradığınız sayfa şu anda görüntülenemiyor.</h1>
+          </div>
+        </div>
+
+        <p class="error-copy">
+          Bağlantı değişmiş, kaldırılmış veya hatalı girilmiş olabilir. Archident Diş Kliniği ana sayfasına dönebilir, İngilizce
+          site sürümünü açabilir ya da doğrudan iletişim kanallarımız üzerinden bize ulaşabilirsiniz.
+        </p>
+
+        <div class="error-actions">
+          <a class="error-action primary" href="/">Türkçe ana sayfaya dön</a>
+          <a class="error-action secondary" href="/en/">Open English version</a>
+          <a class="error-action secondary" href="tel:+905400341365">Hemen ara</a>
+        </div>
+
+        <div class="error-meta">
+          <article class="error-meta-card">
+            <strong>Turkce</strong>
+            <p>Hizmetler, bilgi merkezi, iletisim ve randevu alanlarina ana sayfadan yeniden ulasabilirsiniz.</p>
+          </article>
+          <article class="error-meta-card">
+            <strong>English</strong>
+            <p>You can continue from the English homepage to explore treatments, clinic information, contact, and appointment options.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
